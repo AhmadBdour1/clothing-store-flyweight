@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store - Flyweight Pattern Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1> Clothing Store</h1>
+            <p class="subtitle">Flyweight Pattern Demonstration</p>
+        </header>
+
+        <div class="content">
+            <!-- Statistics Section -->
+            <section class="stats-section">
+                <h2> Flyweight Pattern Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalItems">0</div>
+                        <div class="stat-label">Total Items</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="uniqueModels">0</div>
+                        <div class="stat-label">Unique Models</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="memorySaved">0 KB</div>
+                        <div class="stat-label">Est. Memory Used</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="savingPercentage">0%</div>
+                        <div class="stat-label">Memory Efficiency</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Explanation Section -->
+            <section class="explanation-section">
+                <h2> How Flyweight Pattern Works Here</h2>
+                <div class="explanation-box">
+                    <p>
+                        The <strong>Flyweight Pattern</strong> is a structural design pattern that optimizes memory usage by sharing common data (intrinsic state) across multiple objects. In this clothing store:
+                    </p>
+                    <ul>
+                        <li><strong>Intrinsic State (Shared):</strong> Type, Brand, Design, Color, Material, Price, Image URL - stored once in ClothingModel</li>
+                        <li><strong>Extrinsic State (Unique):</strong> Size, SKU, Stock Location, Quantity - stored in ClothingItem</li>
+                        <li><strong>Factory Pattern:</strong> ClothingModelFactory ensures the same model is reused instead of creating duplicates</li>
+                    </ul>
+                    <p>
+                        When you add multiple items with the same model (e.g., Nike Blue T-Shirt in different sizes), 
+                        only <strong>one ClothingModel object</strong> is created and shared across all items, 
+                        significantly reducing memory consumption.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Inventory Table Section -->
+            <section class="inventory-section">
+                <h2> Inventory</h2>
+                <table class="inventory-table">
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Type</th>
+                            <th>Brand</th>
+                            <th>Design</th>
+                            <th>Color</th>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryTable">
+                        <tr>
+                            <td colspan="9" class="loading">Loading inventory...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+      
+    <script src="script.js"></script>
+</body>
+</html>
