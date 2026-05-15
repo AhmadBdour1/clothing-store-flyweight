@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0d0d0d;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --success-color: #27ae60;
+    --light-bg: #ecf0f1;
+    --white: #ffffff;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --border-color: #bdc3c7;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #000000 100%);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+.header {
+    background: var(--white);
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.header .subtitle {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+/* Content Area */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Statistics Section */
+.stats-section {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stats-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.stat-value {
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 0.95em;
+    opacity: 0.9;
+}
+
+/* Explanation Section */
+.explanation-section {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.explanation-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.explanation-box {
+    background: #f8f9fa;
+    border-left: 4px solid var(--secondary-color);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.explanation-box p {
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+.explanation-box ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.explanation-box li {
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.explanation-box strong {
+    color: var(--secondary-color);
+}
+
+/* Inventory Section */
+.inventory-section {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.inventory-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* Table Styles */
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.inventory-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--white);
+}
+
+.inventory-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+}
+
+.inventory-table td {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+}
+
+.inventory-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.inventory-table tbody tr:hover {
+    background-color: #f0f4ff;
+}
+
+.inventory-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.inventory-table .loading {
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* Footer Styles */
+.footer {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--text-light);
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    font-size: 0.95em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .inventory-table {
+        font-size: 0.9em;
+    }
+
+    .inventory-table th,
+    .inventory-table td {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5em;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .inventory-table {
+        font-size: 0.8em;
+    }
+
+    .inventory-table th,
+    .inventory-table td {
+        padding: 8px;
+    }
+}
+
+/* Loading and Error States */
+.error {
+    background-color: #fee;
+    color: var(--accent-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.success {
+    background-color: #efe;
+    color: var(--success-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--success-color);
+}
